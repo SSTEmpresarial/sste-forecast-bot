@@ -9,5 +9,5 @@
 - **Correction notice (2026-10-09).**
   - What happened: an earlier commit of this repository included per-question aggregates and question titles from Metaculus. They were collected during exploratory research through the website's internal endpoint, before we identified the Terms of Use restriction.
   - What we did: the files were removed from the working tree, and the local copies were quarantined.
-  - What is pending: Metaculus has been asked for guidance; history cleanup is pending the owner's decision.
+  - What is pending: The repository history was rewritten on 2026-10-09 (single squashed commit; `--force-with-lease`), so the removed files are no longer reachable from any branch. Metaculus has been asked for guidance on any further steps.
 - **Market anchors.** Prices are read live from the public Manifold and Polymarket APIs at forecast time and used only as research context. They are not stored.

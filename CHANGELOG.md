@@ -1,6 +1,7 @@
 # Changelog (significant changes; the tournament rules require disclosing mid-season updates)
 
 ## 2026-10-09
+- Repository history rewritten into a single commit, so that earlier commits containing Metaculus-derived data are no longer reachable from any branch. No forecasts had ever been submitted.
 - Removed all Metaculus-derived data from the repository: validation rows, shadow forecasts with question titles, and the scoring script tied to them. Added `docs/DATA_POLICY.md`.
 - Validation claims withdrawn (`docs/VALIDATION.md`).
 - Model configuration is now committed in `config/models.json`, with profiles `frontier_lean` (default), `low_cost`, `validated_like` and `metaculus_credits`. Selected via `FORECAST_PROFILE`.
