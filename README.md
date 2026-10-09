@@ -1,3 +1,35 @@
+# SSTE forecasting bot (FutureEval)
+
+An autonomous forecasting bot for the [Metaculus FutureEval bot tournaments](https://www.metaculus.com/futureeval/). It is built on the official [Metaculus bot template](https://github.com/Metaculus/metac-bot-template) and [forecasting-tools](https://github.com/Metaculus/forecasting-tools) (MIT).
+
+- **Status: INACTIVE.** The forecasting workflows are dormant (`BOT_ENABLED` unset). They stay that way until Metaculus confirms in writing that this commercial, open-source entry may use the API for the tournament.
+- **Commercial participant.** Operated by SSTE Serviços, Sistemas e Treinamento Empresarial LTDA, and fully open source, as the FutureEval rules require for prize eligibility.
+- **No human in the loop.** Once enabled, GitHub Actions runs the bot. It forecasts and comments only through the official API.
+
+## What it does differently from the template (`sste_bot.py`)
+1. **Two prompt styles, alternating.** The template's status-quo prompt alternates with a "reasons for YES / for NO first" prompt.
+2. **Committed multi-model ensemble.** The models are listed in `config/models.json`; the default profile is `frontier_lean` (3 models from 3 labs). Samples are median-aggregated.
+3. **Market anchors.** Live prices from public Manifold and Polymarket markets with similar titles are added to the research, with a warning that they may describe a different event.
+4. **Probability caps.** Binary forecasts are kept within [2%, 98%].
+
+## Repository map
+| path | what |
+|---|---|
+| `sste_bot.py`, `config/models.json` | the bot and its exact model configuration |
+| `tests/` | offline tests (synthetic data only); run with `pytest` |
+| `tools/score.py`, `tools/cost_model.py` | scoring tool and cost model |
+| `docs/COSTS.md` | costs with zero free LLM credits |
+| `docs/DATA_POLICY.md` | what data we use, and the 2026-10-09 correction notice |
+| `docs/VALIDATION.md` | validation status (no claims published) |
+| `docs/REPRODUCE.md` | how to reproduce |
+| `docs/ACTIVATE.md` | human-only activation steps |
+| `CHANGELOG.md` | significant changes |
+| `LICENSE`, `NOTICE` | MIT for SSTE files only; upstream template files are Metaculus's and are not relicensed |
+
+Everything below this line is the original template README.
+
+---
+
 # Simple Metaculus forecasting bot
 This repository contains a simple bot meant to get you started with creating your own bot for the AI Forecasting Tournament. Go to https://www.metaculus.com/futureeval/participate/ for more info and tournament rules (and then go to the  "Getting Started" section of our [resources](https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/#want-to-join-the-ai-forecasting-benchmark) page).
 

@@ -37,11 +37,13 @@ jobs:
         run: poetry install --no-interaction --no-root
       - name: Run bot
         run: |
-          poetry run python main.py --mode test_questions
+          poetry run python sste_bot.py --mode test_questions
         # this reads the environment variables from the github repository.
         # Store under Settings --> Secrets and variables --> Actions
         env:
-          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }} # replace this with the name of the variable under which you stored your own Metaculus token
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
+          FORECAST_PROFILE: ${{ vars.FORECAST_PROFILE }}
+          INCLUDE_MINIBENCH: ${{ vars.INCLUDE_MINIBENCH }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

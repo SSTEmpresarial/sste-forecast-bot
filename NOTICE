@@ -1,0 +1,22 @@
+This repository is a fork of https://github.com/Metaculus/metac-bot-template.
+
+1. Upstream files: Metaculus, NOT covered by our LICENSE
+   The upstream template publishes no license. We do not relicense it. These files remain under whatever terms
+   Metaculus sets; they are included because Metaculus instructs bot makers to fork the template:
+     main.py, main_with_no_framework.py, bot_helpers.py, integrations/**, pyproject.toml, poetry.lock,
+     .env.template, .gitignore, .claude/skills/review-bot/SKILL.md, .github/workflows/review_bot.yaml,
+     and README.md below the line "Everything below this line is the original template README."
+   Upstream files that SSTE modified (our modifications only are MIT; the upstream parts are not):
+     .github/workflows/run_bot_on_tournament.yaml, test_bot.yaml, run_bot_on_metaculus_cup.yaml
+     (entry point, enable guard, profile variables), README.md (top section).
+
+2. SSTE-authored files: MIT, see LICENSE
+     sste_bot.py, config/models.json, tools/score.py, tools/cost_model.py, tests/**, docs/**,
+     CHANGELOG.md, NOTICE, LICENSE.
+
+3. Third-party dependency (not vendored)
+     forecasting-tools (Metaculus), MIT License, installed from PyPI.
+
+4. Data
+     This repository contains no Metaculus questions, forecasts, aggregates or other platform data.
+     See docs/DATA_POLICY.md.
